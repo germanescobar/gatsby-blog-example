@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-      title: `new`,
+    title: `My Blog German`,
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: ["gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", {
