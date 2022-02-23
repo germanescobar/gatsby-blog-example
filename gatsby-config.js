@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `My Blog German`,
@@ -17,5 +19,15 @@ module.exports = {
       "path": "./src/posts/"
     },
     __key: "blog"
+  }, {
+    resolve: "gatsby-source-strapi",
+    options: {
+      apiURL: "http://localhost:1337",
+      accessToken: process.env.STRAPI_TOKEN,
+      collectionTypes: [
+        "post"
+      ],
+      queryLimit: 1000,
+    },
   }]
 };

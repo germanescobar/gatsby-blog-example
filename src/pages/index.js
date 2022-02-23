@@ -77,7 +77,7 @@ const IndexPage = ({ data }) => {
             {docLink.text}
           </a>
         </li>
-        { data.allMdx.nodes.map(node => <li><Link to={`${node.slug}`}>{node.frontmatter.title}</Link></li>)}
+        { data.allStrapiPost.nodes.map(node => <li><Link to={`${node.id}`}>{node.Title}</Link></li>)}
       </ul>
       <img
         alt="Gatsby G Logo"
@@ -94,15 +94,12 @@ export const query = graphql`
         title
       }
     }
-    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+    allStrapiPost(sort: {fields: Date, order: DESC}) {
       nodes {
-        frontmatter {
-          date(formatString: "MMMM D, YYYY")
-          title
-        }
         id
-        slug
-        body
+        Title
+        Date
+        Body
       }
     }
   }
